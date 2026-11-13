@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMSES TOURS | رحلتك تبدأ معنا</title>
+  <meta name="description" content="اكتشف أجمل الوجهات السياحية مع RAMSES TOURS. رحلات وعروض سياحية مميزة.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #071b2b;
+      color: white;
+    }
+
+    header {
+      min-height: 85px;
+      padding: 15px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #071b2b;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      color: #d6ae68;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    nav a:hover { color: #d6ae68; }
+
+    .contact-btn {
+      background: #d6ae68;
+      color: #071b2b;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      padding: 70px 9%;
+      background:
+        linear-gradient(90deg, rgba(7,27,43,.35), #071b2b 100%),
+        url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=85')
+        center/cover;
+    }
+
+    .hero-content { max-width: 650px; }
+
+    .tag {
+      color: #d6ae68;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: #d6ae68; }
+
+    .hero p {
+      color: #e0e5e9;
+      font-size: 17px;
+      line-height: 2;
+      margin-bottom: 30px;
+    }
+
+    .main-btn {
+      display: inline-block;
+      background: #d6ae68;
+      color: #071b2b;
+      text-decoration: none;
+      padding: 13px 30px;
+      border-radius: 6px;
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .main-btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #d6ae68;
+      margin-bottom: 10px;
+    }
+
+    .section-title p { color: #b9c4ce; }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .destination {
+      background: #102a3d;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .destination:hover { transform: translateY(-7px); }
+
+    .destination img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .destination-info { padding: 22px; }
+
+    .destination h3 {
+      color: #d6ae68;
+      margin-bottom: 8px;
+    }
+
+    .destination p {
+      color: #bdc8d0;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .about {
+      background: #102a3d;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      color: #d2dce3;
+      line-height: 2.2;
+    }
+
+    .cta {
+      text-align: center;
+      background: #d6ae68;
+      color: #071b2b;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .cta p { margin-bottom: 25px; }
+
+    .cta .main-btn {
+      background: #071b2b;
+      color: white;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #aab7c2;
+      background: #04121e;
+    }
+
+    @media(max-width: 800px) {
+      header { flex-wrap: wrap; gap: 15px; }
+      nav { order: 3; width: 100%; justify-content: center; gap: 17px; }
+      .contact-btn { font-size: 12px; }
+      .destinations { grid-template-columns: 1fr; }
+      .hero { min-height: 550px; }
+      section { padding: 60px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">RAMSES TOURS</div>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#destinations">الوجهات</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+
+    <a class="contact-btn" href="#contact">احجز رحلتك</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="tag">✦ اكتشف العالم معنا</div>
+
+        <h1>
+          رحلتك القادمة تبدأ مع
+          <span>RAMSES TOURS</span>
+        </h1>
+
+        <p>
+          اكتشف أجمل الوجهات السياحية، واستمتع بتجارب
+          سفر استثنائية وخدمات مميزة. نحن هنا لنحوّل
+          أحلامك إلى ذكريات لا تُنسى.
+        </p>
+
+        <a href="#destinations" class="main-btn">
+          اكتشف وجهاتنا ←
+        </a>
+      </div>
+    </section>
+
+    <section id="destinations">
+      <div class="section-title">
+        <h2>وجهاتنا السياحية</h2>
+        <p>اكتشف أماكن رائعة واستعد لمغامرتك القادمة</p>
+      </div>
+
+      <div class="destinations">
+        <article class="destination">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="الطبيعة">
+          <div class="destination-info">
+            <h3>رحلات الطبيعة</h3>
+            <p>استمتع بجمال الطبيعة واكتشف أماكن ساحرة.</p>
+          </div>
+        </article>
+
+        <article class="destination">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="دبي">
+          <div class="destination-info">
+            <h3>رحلات المدن</h3>
+            <p>اكتشف أشهر المدن واستمتع بتجارب سياحية مميزة.</p>
+          </div>
+        </article>
+
+        <article class="destination">
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800" alt="البحر">
+          <div class="destination-info">
+            <h3>رحلات الشواطئ</h3>
+            <p>استرخِ واستمتع بأجمل الشواطئ والمناظر البحرية.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-title">
+        <h2>من نحن؟</h2>
+      </div>
+
+      <p>
+        RAMSES TOURS هي وكالتك لاكتشاف العالم.
+        نطمح إلى تقديم تجارب سفر مميزة، بخدمات احترافية
+        واهتمام بأدق التفاصيل، لنمنحك رحلة ممتعة ومريحة.
+      </p>
+    </section>
+
+    <section class="cta" id="contact">
+      <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
+      <p>تواصل معنا ودعنا نساعدك في التخطيط لمغامرتك.</p>
+      <a href="mailto:contact@example.com" class="main-btn">
+        تواصل معنا
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 RAMSES TOURS - جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
