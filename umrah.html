@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>برامج العمرة - RAMSES TOURS</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+
+      background:
+        linear-gradient(rgba(4, 20, 38, 0.72), rgba(4, 20, 38, 0.82)),
+        url('images/umrah.jpg') center/cover fixed;
+    }
+
+    header {
+      background: rgba(3, 18, 35, 0.95);
+      padding: 22px 7%;
+      border-bottom: 1px solid #c99b42;
+    }
+
+    header a {
+      color: #e9bd62;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    main {
+      padding: 65px 20px 45px;
+    }
+
+    h1 {
+      color: #e9bd62;
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .months {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .month-card {
+      width: 340px;
+      overflow: hidden;
+      background: rgba(4, 27, 49, 0.94);
+      border: 2px solid #d6aa51;
+      border-radius: 20px;
+      padding: 30px 22px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transition: 0.3s;
+    }
+
+    .month-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .month-icon {
+      font-size: 38px;
+      color: #e9bd62;
+    }
+
+    .month-card h2 {
+      color: #e9bd62;
+      font-size: 30px;
+      margin: 15px 0;
+    }
+
+    .month-card p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .month-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f5d17b, #d49b36);
+      color: #071b2b;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    .month-btn:hover {
+      background: white;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 45px;
+      padding: 13px 28px;
+      border: 2px solid #d6aa51;
+      border-radius: 30px;
+      color: #e9bd62;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .month-card {
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+  </header>
+
+  <main>
+    <h1>برامج العمرة</h1>
+
+    <p class="subtitle">
+      اختار الشهر واكتشف برامج العمرة المتوفرة لدينا
+    </p>
+
+    <div class="months">
+
+      <div class="month-card">
+        <div class="month-icon">🕋</div>
+        <h2>دجنبر</h2>
+        <p>اكتشف عروض وبرامج العمرة لشهر دجنبر</p>
+        <a href="decembre.html" class="month-btn">
+          اكتشف البرامج
+        </a>
+      </div>
+
+      <div class="month-card">
+        <div class="month-icon">🕋</div>
+        <h2>يناير</h2>
+        <p>اكتشف عروض وبرامج العمرة لشهر يناير</p>
+        <a href="janvier.html" class="month-btn">
+          اكتشف البرامج
+        </a>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← العودة إلى الصفحة الرئيسية
+    </a>
+  </main>
+
+</body>
+</html>

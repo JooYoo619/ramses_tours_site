@@ -9,22 +9,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    * {
+@font-face {
+  font-family: 'XBYas';
+  src: url('fonts/xb-yas-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'XBYas', sans-serif;
+  font-size: 30px;
+  background: #071b2b;
+  color: rgb(0, 0, 0);
+}    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #071b2b;
-      color: white;
-    }
 
     header {
       min-height: 85px;
@@ -35,27 +40,26 @@
       background: #071b2b;
     }
 
-     .logo img {
-  width: 150px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+
+    
+
+    nav a,
+.contact-btn {
+  background: #d6ae68;
+  color: #071b2b;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 24px;
+  transition: .3s;
 }
-    }
 
-    nav {
-      display: flex;
-      gap: 30px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    nav a:hover { color: #d6ae68; }
+nav a:hover,
+.contact-btn:hover {
+  background: white;
+  color: #071b2b;
+}
 
     .contact-btn {
       background: #d6ae68;
@@ -73,8 +77,7 @@
       padding: 70px 9%;
       background:
         linear-gradient(90deg, rgba(7,27,43,.35), #071b2b 100%),
-        url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=85')
-        center/cover;
+url('images/hero.png')        center/cover;
     }
 
     .hero-content { max-width: 650px; }
@@ -112,7 +115,7 @@
     }
 
     .main-btn:hover {
-      background: white;
+      background: rgb(2, 2, 2);
       transform: translateY(-3px);
     }
 
@@ -131,43 +134,99 @@
       margin-bottom: 10px;
     }
 
-    .section-title p { color: #b9c4ce; }
+    .section-title p { color: #101318; }
+section#destinations {
+  background-color: #071b2b !important;
+  color: rgb(20, 17, 17);
+  min-height: 400px;
+}
 
-    .destinations {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+.destination {
+  background: #102a3d;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+}
 
-    .destination {
-      background: #102a3d;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: .3s;
-    }
+.destination img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: .4s;
+}
 
-    .destination:hover { transform: translateY(-7px); }
+.destination:hover {
+  transform: translateY(-7px);
+}
 
-    .destination img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
+.destination:hover img {
+  transform: scale(1.05);
+}
 
-    .destination-info { padding: 22px; }
+.destination-info {
+  padding: 22px;
+}
 
-    .destination h3 {
-      color: #d6ae68;
-      margin-bottom: 8px;
-    }
+.destination-info h3 {
+  color: #d6ae68;
+  margin-bottom: 8px;
+}
 
-    .destination p {
-      color: #bdc8d0;
-      font-size: 14px;
-      line-height: 1.9;
-    }
+.destination-info p {
+  color: #bdc8d0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.reviews {
+  background: linear-gradient(180deg, #071b2b, #102a3d);
+}
 
-    .about {
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.review-card {
+  background: #102a3d;
+  border: 1px solid rgba(214,174,104,.4);
+  border-radius: 16px;
+  padding: 30px 22px;
+  text-align: center;
+  transition: .3s;
+}
+
+.review-card:hover {
+  transform: translateY(-7px);
+  background: #183b52;
+}
+
+.review-card h3 {
+  color: #d6ae68;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.review-card p {
+  color: #d0d9df;
+  line-height: 2;
+  font-size: 14px;
+}
+
+@media(max-width: 800px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 200px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}    .about {
       background: #102a3d;
       text-align: center;
     }
@@ -182,14 +241,14 @@
     .cta {
       text-align: center;
       background: #d6ae68;
-      color: #071b2b;
+      color: #f1f2f3;
     }
 
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
+.cta h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #d6ae68;
+}
     .cta p { margin-bottom: 25px; }
 
     .cta .main-btn {
@@ -204,33 +263,188 @@
       background: #04121e;
     }
 
+    .services {
+  background: #071b2b;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: #102a3d;
+  border: 1px solid #d6ae68;
+  border-radius: 12px;
+  padding: 25px 18px;
+  text-align: center;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  background: #183b52;
+}
+
+.service-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: block;
+}
+.service-card h3 {
+  color: #d6ae68;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #bdc8d0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media(max-width: 800px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
     @media(max-width: 800px) {
       header { flex-wrap: wrap; gap: 15px; }
       nav { order: 3; width: 100%; justify-content: center; gap: 17px; }
       .contact-btn { font-size: 12px; }
       .destinations { grid-template-columns: 1fr; }
-      .hero { min-height: 550px; }
+      .hero { min-height: 200px; }
       section { padding: 60px 6%; }
     }
-  </style>
+     .logo img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  object-fit: contain;
+}
+ .about-video {
+  transition: transform 0.4s ease;
+  border: 2px solid #d6ae68;
+box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
+  margin: 30px auto 0;
+  max-width: 750px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.about-video video {
+  .about-video:hover {
+  transform: scale(1.02);
+}
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  max-height: 450px;
+  background: #000;
+}
+.reviews {
+  padding: 70px 6%;
+  background: #061725;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.review-card {
+  animation: reviewAppear 0.8s ease both;
+  background: linear-gradient(145deg, #102b40, #071b2b);
+  border: 1px solid #d6ae68;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(214,174,104,0.2);
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d6ae68;
+  color: #071b2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.review-top h3 {
+  font-size: 17px;
+  color: white;
+}
+
+.review-top span {
+  font-size: 12px;
+  color: #c5c5c5;
+}
+
+.facebook-icon {
+  margin-right: auto;
+  font-size: 50px !important;
+  font-weight: bold;
+  color: #1877f2 !important;
+}
+
+.review-stars {
+  color: #d6ae68;
+  font-size: 23px;
+  margin: 20px 0 12px;
+  letter-spacing: 3px;
+}
+
+.review-card p {
+  color: #eee;
+  line-height: 1.9;
+  font-size: 16px;
+}
+#destinations,
+#destinations .destinations {
+  background-color: #071b2b !important;
+}
+</style>
 </head>
 
 <body>
 
   <header>
-    <div class="logo">
-  <img src="images/LOGO.png" alt="RAMSES TOURS">
-</div>
+  <div class="logo">
+    <img src="images/logo.png" alt="RAMSES TOURS">
+  </div>
 
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#destinations">الوجهات</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">اتصل بنا</a>
-    </nav>
+  <nav>
+  <a href="#home"> الرئيسية</a>
+<a href="#services">فئات الرحلات</a>
+  <a href="#about"> من نحن</a>
+  <a href="#contact"> اتصل بنا</a>
+</nav>
 
-    <a class="contact-btn" href="#contact">احجز رحلتك</a>
-  </header>
+  <a class="contact-btn" href="#contact">احجز رحلتك</a>
+</header>
 
   <main>
     <section class="hero" id="home">
@@ -238,8 +452,8 @@
         <div class="tag">✦ اكتشف العالم معنا</div>
 
         <h1>
-          رحلتك القادمة تبدأ مع
-          <span>RAMSES TOURS</span>
+          <span style="color: #d6ae68;">رحلتك القادمة تبدأ مع</span>
+          <span>R△MSΣS TOURS</span>
         </h1>
 
         <p>
@@ -254,8 +468,39 @@
       </div>
     </section>
 
-    <section id="destinations">
-      <div class="section-title">
+<section class="services" id="services">  <div class="section-title">
+    <h2>خدماتنا</h2>
+    <p>كل ما تحتاجه لرحلتك في مكان واحد</p>
+  </div>
+
+  <div class="services-grid">
+
+
+<a href="umrah.html" class="service-card">
+  <img src="images/umrah.jpg" alt="العمرة">
+  <h3>العمرة</h3>
+  <p>برامج العمرة والإقامة والتنقل</p>
+</a>
+
+    <div class="service-card">
+<img src="images/voyages.jpg" alt="رحلات منظمة">      <h3>Voyages organisés</h3>
+      <p>رحلات سياحية منظمة إلى أجمل الوجهات</p>
+    </div>
+
+    <div class="service-card">
+<img src="images/visa.jpg" alt="الفيزا والتأشيرات">      <h3>الفيزا والتأشيرات</h3>
+      <p>مواكبة وإرشاد في ملفات التأشيرة</p>
+    </div>
+
+    <div class="service-card">
+<img src="images/flights.jpg" alt="تذاكر الطيران">      <h3>تذاكر الطيران</h3>
+      <p>حجز تذاكر الطيران لمختلف الوجهات</p>
+    </div>
+
+  </div>
+</section>
+    
+<section id="destinations" style="background-color: #071b2b !important;">      <div class="section-title">
         <h2>وجهاتنا السياحية</h2>
         <p>اكتشف أماكن رائعة واستعد لمغامرتك القادمة</p>
       </div>
@@ -287,7 +532,55 @@
       </div>
     </section>
 
-    <section class="about" id="about">
+<section class="reviews">
+  <div class="section-title">
+    <h2>آراء زبنائنا تهمنا</h2>
+    <p>ثقتكم هي سر نجاحنا واستمرارنا</p>
+  </div>
+
+  <div class="reviews-container">
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">K</div>
+        <div>
+          <h3>كريم ايت حمو</h3>
+          <span>نموذج تجريبي</span>
+        </div>
+        <span class="facebook-icon">f</span>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p>تعامل راقٍ واهتمام بالتفاصيل. شكراً RAMSES TOURS.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">M</div>
+        <div>
+          <h3>مها بنعطية</h3>
+          <span>نموذج تجريبي</span>
+        </div>
+        <span class="facebook-icon">f</span>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p>خدمات احترافية وتنظيم مميز. نتمنى لكم المزيد من النجاح.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">G</div>
+        <div>
+          <h3>غزلان اللويسي</h3>
+          <span>نموذج تجريبي</span>
+        </div>
+        <span class="facebook-icon">f</span>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p>شكراً على حسن الاستقبال والتعامل الطيب ❤️</p>
+    </div>
+
+  </div>
+</section>   <section class="about" id="about">
       <div class="section-title">
         <h2>من نحن؟</h2>
       </div>
@@ -297,20 +590,46 @@
         نطمح إلى تقديم تجارب سفر مميزة، بخدمات احترافية
         واهتمام بأدق التفاصيل، لنمنحك رحلة ممتعة ومريحة.
       </p>
-    </section>
 
+      <div class="about-video">
+        <video controls playsinline>
+          <source src="In progress.mp4" type="video/mp4">
+          المتصفح لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+    </section>
     <section class="cta" id="contact">
       <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
       <p>تواصل معنا ودعنا نساعدك في التخطيط لمغامرتك.</p>
-      <a href="mailto:contact@example.com" class="main-btn">
-        تواصل معنا
-      </a>
-    </section>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=ramsestours01@gmail.com"
+   target="_blank"
+   class="main-btn">
+   تواصل معنا عبر البريد الإلكتروني
+</a>    </section>
   </main>
 
   <footer>
     © 2026 RAMSES TOURS - جميع الحقوق محفوظة
   </footer>
 
+<a href="https://wa.me/212662111120"
+   target="_blank"
+   rel="noopener"
+   style="
+     position: fixed;
+     bottom: 25px;
+     left: 25px;
+     background: #25D366;
+     color: white;
+     padding: 14px 22px;
+     border-radius: 50px;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 16px;
+     z-index: 9999;
+     box-shadow: 0 4px 12px rgba(0,0,0,.3);
+   ">
+  تواصل معنا عبر واتساب
+</a>
 </body>
 </html>
