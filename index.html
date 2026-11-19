@@ -313,7 +313,18 @@ section#destinations {
 }
     @media(max-width: 800px) {
       header { flex-wrap: wrap; gap: 15px; }
-      nav { order: 3; width: 100%; justify-content: center; gap: 17px; }
+nav {
+  order: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+nav a {
+  font-size: 16px;
+  padding: 8px 10px;
+}
       .contact-btn { font-size: 12px; }
       .destinations { grid-template-columns: 1fr; }
       .hero { min-height: 200px; }
@@ -426,6 +437,22 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
 #destinations .destinations {
   background-color: #071b2b !important;
 }
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #d6ae68;
+  color: #071b2b;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 </style>
 </head>
 
@@ -438,7 +465,7 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
 
   <nav>
   <a href="#home"> الرئيسية</a>
-<a href="#services">فئات الرحلات</a>
+<a href="#services"> خدماتنا </a>
   <a href="#about"> من نحن</a>
   <a href="#contact"> اتصل بنا</a>
 </nav>
@@ -482,21 +509,21 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
   <p>برامج العمرة والإقامة والتنقل</p>
 </a>
 
-    <div class="service-card">
-<img src="images/voyages.jpg" alt="رحلات منظمة">      <h3>Voyages organisés</h3>
+<a href="Voyages organisés.html" class="service-card">
+  <img src="images/voyages.jpg" alt="رحلات منظمة">      <h3>Voyages organisés</h3>
       <p>رحلات سياحية منظمة إلى أجمل الوجهات</p>
-    </div>
+</a>
 
-    <div class="service-card">
-<img src="images/visa.jpg" alt="الفيزا والتأشيرات">      <h3>الفيزا والتأشيرات</h3>
-      <p>مواكبة وإرشاد في ملفات التأشيرة</p>
-    </div>
-
-    <div class="service-card">
-<img src="images/flights.jpg" alt="تذاكر الطيران">      <h3>تذاكر الطيران</h3>
-      <p>حجز تذاكر الطيران لمختلف الوجهات</p>
-    </div>
-
+<a href="visas.html" class="service-card">
+  <img src="images/visa.jpg" alt="الفيزا والتأشيرات">
+  <h3>الفيزا والتأشيرات</h3>
+  <p>مواكبة وإرشاد في ملفات التأشيرة</p>
+</a>
+<a href="billets.html" class="service-card">
+  <img src="images/flights.jpg" alt="تذاكر الطيران">
+  <h3>تذاكر الطيران</h3>
+  <p>حجز تذاكر الطيران لمختلف الوجهات</p>
+</a>
   </div>
 </section>
     
@@ -545,7 +572,7 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
         <div class="review-avatar">K</div>
         <div>
           <h3>كريم ايت حمو</h3>
-          <span>نموذج تجريبي</span>
+          <span>فيزا </span>
         </div>
         <span class="facebook-icon">f</span>
       </div>
@@ -558,7 +585,7 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
         <div class="review-avatar">M</div>
         <div>
           <h3>مها بنعطية</h3>
-          <span>نموذج تجريبي</span>
+          <span> حجز تذكرة </span>
         </div>
         <span class="facebook-icon">f</span>
       </div>
@@ -571,7 +598,7 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
         <div class="review-avatar">G</div>
         <div>
           <h3>غزلان اللويسي</h3>
-          <span>نموذج تجريبي</span>
+          <span> عمرة </span>
         </div>
         <span class="facebook-icon">f</span>
       </div>
@@ -580,7 +607,256 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
     </div>
 
   </div>
-</section>   <section class="about" id="about">
+</section>   
+
+<style>
+.booking-box {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #071b2b;
+  border: 2px solid #d6ae68;
+  border-radius: 18px;
+  text-align: center;
+}
+.booking-box input,
+.booking-box select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #d6ae68;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.booking-box label {
+  display: block;
+  color: #d6ae68;
+  text-align: right;
+  margin-top: 12px;
+}
+.booking-box h3 {
+  color: #d6ae68;
+  margin: 20px 0 10px;
+}
+.booking-box button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background: #d6ae68;
+  color: #071b2b;
+  border: none;
+  border-radius: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* فريق RAMSES TOURS */
+.team-section {
+  margin-top: 45px;
+}
+
+.team-section h2 {
+  color: #d6ae68;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #d6ae68;
+  border-radius: 16px;
+  padding: 25px 15px;
+transition: transform 0.3s ease, background 0.3s ease;}
+
+.team-card:hover {
+  transform: translateY(-7px);
+  background: rgba(214, 174, 104, 0.12);
+}
+
+.team-card h3 {
+  color: #d6ae68;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  color: white;
+  line-height: 1.7;
+  min-height: 45px;
+}
+
+.team-card a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #d6ae68;
+  color: #071b2b;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.team-card a:hover {
+  transform: scale(1.07);
+}
+.team-section h2 {
+  color: #d6ae68;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #d6ae68;
+  border-radius: 16px;
+  padding: 25px 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-7px);
+  background: rgba(214, 174, 104, 0.12);
+}
+
+.team-card h3 {
+  color: #d6ae68;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  color: white;
+  line-height: 1.7;
+  min-height: 45px;
+}
+
+.team-card a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #d6ae68;
+  color: #071b2b;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.team-card a:hover {
+  transform: scale(1.07);
+}
+</style>
+
+<section class="cta" id="contact">
+  <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
+  <p>احجز رحلتك معنا بسهولة</p>
+
+  <div class="booking-box">
+    <h3>✈️ استمارة الحجز</h3>
+
+    <form onsubmit="
+      event.preventDefault();
+      let f=this;
+      let m='طلب حجز جديد - RAMSES TOURS\n';
+      m+='الاسم: '+f.customerName.value+'\n';
+      m+='الهاتف: '+f.phone.value+'\n';
+      m+='نوع الرحلة: '+f.trip.value+'\n';
+      m+='عدد المسافرين: '+f.travelers.value+'\n';
+
+      if(f.trip.value==='تذاكر الطيران'){
+        m+='الانطلاق: '+f.origin.value+'\n';
+        m+='الوصول: '+f.destination.value+'\n';
+        m+='تاريخ الذهاب: '+f.departure.value+'\n';
+        m+='نوع التذكرة: '+f.direction.value+'\n';
+        if(f.direction.value==='ذهاب وإياب'){
+          m+='تاريخ الإياب: '+f.returnDate.value+'\n';
+        }
+        m+='الأمتعة: '+f.baggage.value+'\n';
+      }
+
+      window.open('https://wa.me/212662111150?text='+encodeURIComponent(m),'_blank');
+    ">
+
+      <input type="text" name="customerName" placeholder="الاسم الكامل" required>
+      <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+
+      <select name="trip" required onchange="
+        let show=this.value==='تذاكر الطيران';
+        document.getElementById('ticketFields').hidden=!show;
+        document.querySelectorAll('#ticketFields input, #ticketFields select').forEach(e=>e.required=show);
+      ">
+        <option value="">اختار نوع الرحلة</option>
+        <option value="العمرة">العمرة</option>
+        <option value="رحلات سياحية">رحلات سياحية</option>
+        <option value="تذاكر الطيران">تذاكر الطيران</option>
+      </select>
+
+      <input type="number" name="travelers" placeholder="عدد المسافرين" min="1" required>
+
+      <div id="ticketFields" hidden>
+        <h3>✈️ معلومات تذكرة الطيران</h3>
+
+        <input type="text" name="origin" placeholder="مدينة الانطلاق">
+        <input type="text" name="destination" placeholder="مدينة الوصول">
+
+        <label>تاريخ الذهاب</label>
+        <input type="date" name="departure">
+
+        <select name="direction" required onchange="
+          let show=this.value==='ذهاب وإياب';
+          document.getElementById('returnDateBox').hidden=!show;
+          document.getElementById('returnDate').required=show;
+        ">
+          <option value="">نوع التذكرة</option>
+          <option value="ذهاب فقط">ذهاب فقط</option>
+          <option value="ذهاب وإياب">ذهاب وإياب</option>
+        </select>
+
+        <div id="returnDateBox" hidden>
+          <label>تاريخ الإياب</label>
+          <input type="date" name="returnDate" id="returnDate">
+        </div>
+
+        <h3>🧳 الأمتعة</h3>
+        <select name="baggage" required>
+          <option value="">اختار الأمتعة المطلوبة</option>
+          <option value="بدون أمتعة إضافية">بدون أمتعة إضافية</option>
+          <option value="10 كيلوغرام">10 كيلوغرام</option>
+          <option value="20 كيلوغرام">20 كيلوغرام</option>
+          <option value="23 كيلوغرام">23 كيلوغرام</option>
+          <option value="32 كيلوغرام">32 كيلوغرام</option>
+          <option value="أمتعة أخرى - يرجى التواصل">أمتعة أخرى</option>
+        </select>
+      </div>
+
+      <button type="submit">إرسال طلب الحجز عبر واتساب</button>
+    </form>
+  </div>
+
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ramsestours01@gmail.com"
+     target="_blank" class="main-btn">
+    تواصل معنا عبر البريد الإلكتروني
+  </a>
+</section>
+
+<section class="about" id="about">
       <div class="section-title">
         <h2>من نحن؟</h2>
       </div>
@@ -590,7 +866,43 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
         نطمح إلى تقديم تجارب سفر مميزة، بخدمات احترافية
         واهتمام بأدق التفاصيل، لنمنحك رحلة ممتعة ومريحة.
       </p>
+<div class="team-section">
+  <h2>فريق RAMSES TOURS</h2>
 
+  <div class="team-grid">
+
+    <div class="team-card">
+    <h3>Hassan Belkhou</h3>
+      <p>Directeur</p>
+      <a href="https://wa.me/212662111120" target="_blank">تواصل عبر واتساب</a>
+    </div>
+
+    <div class="team-card">
+      <h3>Btissam</h3>
+      <p>Online Services / Visa / Tickets</p>
+      <a href="https://wa.me/212662111150" target="_blank">تواصل عبر واتساب</a>
+    </div>
+
+    <div class="team-card">
+      <h3>Oumaima</h3>
+      <p>Omra / Tickets / Visa</p>
+      <a href="https://wa.me/212662111164" target="_blank">تواصل عبر واتساب</a>
+    </div>
+
+    <div class="team-card">
+      <h3>Sara</h3>
+      <p>Tickets / Visa / Omra</p>
+      <a href="https://wa.me/212662111139" target="_blank">تواصل عبر واتساب</a>
+    </div>
+
+    <div class="team-card">
+      <h3>Youssef</h3>
+      <p>Designer / Tickets / Omra</p>
+      <a href="https://wa.me/212659191714" target="_blank">تواصل عبر واتساب</a>
+    </div>
+
+  </div>
+</div>
       <div class="about-video">
         <video controls playsinline>
           <source src="In progress.mp4" type="video/mp4">
@@ -598,21 +910,13 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
         </video>
       </div>
     </section>
-    <section class="cta" id="contact">
-      <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
-      <p>تواصل معنا ودعنا نساعدك في التخطيط لمغامرتك.</p>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=ramsestours01@gmail.com"
-   target="_blank"
-   class="main-btn">
-   تواصل معنا عبر البريد الإلكتروني
-</a>    </section>
   </main>
 
   <footer>
     © 2026 RAMSES TOURS - جميع الحقوق محفوظة
   </footer>
 
-<a href="https://wa.me/212662111120"
+<a href="https://wa.me/212659191714"
    target="_blank"
    rel="noopener"
    style="
@@ -631,5 +935,8 @@ box-shadow: 0 0 25px rgba(214, 174, 104, 0.25);
    ">
   تواصل معنا عبر واتساب
 </a>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+  ↑
+</button>
 </body>
 </html>

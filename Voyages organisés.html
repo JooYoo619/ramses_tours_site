@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voyages Organisés | RAMSES TOURS</title>
+
+<style>
+@font-face {
+  font-family: 'XBYas';
+  src: url('fonts/xb-yas-bold.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'XBYas', sans-serif;
+  background: #071b2b;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #d6ae68;
+}
+
+header a {
+  color: #d6ae68;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 15px 40px;
+}
+
+.hero h1 {
+  color: #d6ae68;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 2;
+}
+
+.destinations {
+  padding: 25px 6% 60px;
+}
+
+.destinations h2 {
+  text-align: center;
+  color: #d6ae68;
+  margin-bottom: 30px;
+  font-size: 27px;
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.country {
+  position: relative;
+  border: 2px solid #d6ae68;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #102c40;
+  transition: .3s;
+  padding: 0;
+  color: white;
+  font-family: inherit;
+}
+
+.country:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px #0008;
+}
+
+.country img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.country h3 {
+  padding: 15px;
+  color: #d6ae68;
+  font-size: 21px;
+}
+
+.booking {
+  display: none;
+  max-width: 650px;
+  margin: 0 auto 70px;
+  padding: 30px;
+  border: 2px solid #d6ae68;
+  border-radius: 15px;
+  background: #102c40;
+}
+
+.booking h2 {
+  color: #d6ae68;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking input,
+.booking textarea {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 15px;
+  border: 1px solid #d6ae68;
+  border-radius: 7px;
+  background: #071b2b;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.booking input::placeholder,
+.booking textarea::placeholder {
+  color: #ccc;
+}
+
+.booking button {
+  width: 100%;
+  padding: 14px;
+  background: #d6ae68;
+  color: #0e0f0f;
+  border: none;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking button:hover {
+  background: #edc982;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #d6ae68;
+  color: #d6ae68;
+}
+
+@media(max-width: 800px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .country img {
+    height: 140px;
+  }
+
+  .country h3 {
+    font-size: 17px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .booking {
+    margin: 0 5% 50px;
+    padding: 20px;
+  }
+}
+
+@media(max-width: 400px) {
+  .countries {
+    grid-template-columns: 1fr;
+  }
+
+  .country img {
+    height: 190px;
+  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+</header>
+
+<section class="hero">
+  <h1>اكتشف العالم مع RAMSES TOURS</h1>
+  <p>اختار الوجهة اللي كتحلم بها، وخلي علينا تنظيم رحلتك.</p>
+</section>
+
+<section class="destinations">
+  <h2>اختار وجهتك السياحية</h2>
+
+  <div class="countries">
+
+    <button class="country" onclick="chooseCountry('تركيا')">
+      <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800" alt="تركيا">
+      <h3>تركيا </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('فرنسا')">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="فرنسا">
+      <h3>فرنسا </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('إسبانيا')">
+      <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800" alt="إسبانيا">
+      <h3>إسبانيا </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('إيطاليا')">
+      <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800" alt="إيطاليا">
+      <h3>إيطاليا </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('مصر')">
+<img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=800" alt="مصر">      <h3>مصر </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('دبي')">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="دبي">
+      <h3>دبي </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('اليابان')">
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="اليابان">
+      <h3>اليابان </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('تايلاند')">
+      <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800" alt="تايلاند">
+      <h3>تايلاند </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('سويسرا')">
+      <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="سويسرا">
+      <h3>سويسرا </h3>
+    </button>
+
+    <button class="country" onclick="chooseCountry('بريطانيا')">
+      <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800" alt="بريطانيا">
+      <h3>بريطانيا </h3>
+    </button>
+
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <h2>طلب رحلة حسب الاختيار</h2>
+  <p>عمر المعلومات التالية وسنتواصل معك.</p>
+
+  <form onsubmit="sendWhatsApp(event)">
+
+    <input type="text" id="customerName" placeholder="الاسم الكامل" required>
+
+    <input type="tel" id="customerPhone" placeholder="رقم الهاتف" required>
+
+    <input type="text" id="selectedCountry" readonly required>
+
+<label>تاريخ الذهاب </label>
+<input type="date" id="travelDate" required>
+
+<label>تاريخ الرجوع </label>
+<input type="date" id="returnDate" required>    <input type="number" id="travelers" min="1" placeholder="عدد المسافرين" required>
+
+    <textarea id="notes" rows="4" placeholder="معلومات إضافية (اختياري)"></textarea>
+
+    <button type="submit">إرسال الطلب عبر واتساب</button>
+
+  </form>
+</section>
+
+<footer>
+  © RAMSES TOURS - جميع الحقوق محفوظة
+</footer>
+
+<script>
+function chooseCountry(country) {
+  document.getElementById('selectedCountry').value = country;
+
+  const booking = document.getElementById('booking');
+  booking.style.display = 'block';
+
+  booking.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+function sendWhatsApp(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('customerName').value;
+  const phone = document.getElementById('customerPhone').value;
+  const country = document.getElementById('selectedCountry').value;
+  const date = document.getElementById('travelDate').value || 'لم يحدد';
+  const travelers = document.getElementById('travelers').value;
+  const notes = document.getElementById('notes').value || 'لا توجد';
+
+  const message =
+    'طلب رحلة جديدة - RAMSES TOURS\n\n' +
+    'الاسم: ' + name + '\n' +
+    'الهاتف: ' + phone + '\n' +
+    'الوجهة: ' + country + '\n' +
+    'تاريخ السفر: ' + date + '\n' +
+    'عدد المسافرين: ' + travelers + '\n' +
+    'معلومات إضافية: ' + notes;
+
+  const whatsappURL =
+    'https://wa.me/212659191714?text=' + encodeURIComponent(message);
+
+  window.open(whatsappURL, '_blank');
+}
+</script>
+
+</body>
+</html>

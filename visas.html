@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طلب التأشيرة | RAMSES TOURS</title>
+
+<style>
+@font-face {
+  font-family: 'XBYas';
+  src: url('fonts/xb-yas-bold.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'XBYas', sans-serif;
+  background: #071b2b;
+  color: white;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+header h1 {
+  color: #d6ae68;
+  font-size: 32px;
+}
+
+header p {
+  color: #ddd;
+}
+
+.back {
+  display: inline-block;
+  color: #d6ae68;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.booking {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #102b40;
+  border: 1px solid #d6ae68;
+  border-radius: 18px;
+}
+
+.booking h2 {
+  color: #d6ae68;
+  text-align: center;
+}
+
+.booking p {
+  text-align: center;
+  color: #ddd;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  color: #d6ae68;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #526779;
+  border-radius: 9px;
+  background: #071b2b;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: #d6ae68;
+  color: #071b2b;
+  font-family: inherit;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #efca88;
+}
+
+footer {
+  text-align: center;
+  color: #aaa;
+  margin-top: 35px;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  color: #d6ae68;
+  border: 1px solid #d6ae68;
+  border-radius: 30px;
+  text-decoration: none;
+  background: rgba(214, 174, 104, 0.08);
+  transition: 0.3s;
+}
+
+.back:hover {
+  background: #d6ae68;
+  color: #071b2b;
+  transform: translateY(-3px);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="back">
+  <span>←</span> العودة إلى الصفحة الرئيسية
+</a>  <h1>طلب التأشيرة VISA</h1>
+  <p>عمر الاستمارة وسنتواصل معك في أقرب وقت</p>
+</header>
+
+<section class="booking">
+  <h2>استمارة طلب التأشيرة</h2>
+  <p>جميع المعلومات ضرورية لإرسال الطلب</p>
+
+  <form onsubmit="sendVisaWhatsApp(event)">
+
+    <label>الاسم الكامل</label>
+    <input type="text" id="visaName" placeholder="الاسم الكامل" required>
+
+    <label>رقم الهاتف</label>
+    <input type="tel" id="visaPhone" placeholder="رقم الهاتف" required>
+
+    <label>الدولة المطلوبة</label>
+    <input type="text" id="visaCountry" placeholder="الدولة التي تريد السفر إليها" required>
+
+    <label>نوع التأشيرة</label>
+    <select id="visaType" required>
+      <option value="">اختار نوع التأشيرة</option>
+      <option value="سياحية">سياحية</option>
+      <option value="دراسة">دراسة</option>
+      <option value="عمل">عمل</option>
+      <option value="زيارة عائلية">زيارة عائلية</option>
+      <option value="أخرى">أخرى</option>
+    </select>
+
+    <label>تاريخ السفر المتوقع</label>
+    <input type="date" id="visaDate" required>
+
+    <label>معلومات إضافية</label>
+    <textarea id="visaNotes" rows="4" placeholder="أي معلومات أخرى (اختياري)"></textarea>
+
+    <button type="submit">إرسال طلب التأشيرة عبر واتساب</button>
+
+  </form>
+</section>
+
+<footer>
+  RAMSES TOURS © جميع الحقوق محفوظة
+</footer>
+
+<script>
+function sendVisaWhatsApp(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("visaName").value;
+  const phone = document.getElementById("visaPhone").value;
+  const country = document.getElementById("visaCountry").value;
+  const type = document.getElementById("visaType").value;
+  const date = document.getElementById("visaDate").value;
+  const notes = document.getElementById("visaNotes").value;
+
+  const message =
+    "طلب تأشيرة جديد - RAMSES TOURS\n\n" +
+    "الاسم: " + name + "\n" +
+    "الهاتف: " + phone + "\n" +
+    "الدولة: " + country + "\n" +
+    "نوع التأشيرة: " + type + "\n" +
+    "تاريخ السفر: " + date + "\n" +
+    "معلومات إضافية: " + notes;
+
+  window.open(
+    "https://wa.me/212662111120?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>

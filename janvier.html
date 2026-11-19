@@ -10,7 +10,10 @@
     body {
       margin: 0;
       padding: 30px 5%;
-      background: #071b2b;
+      background:
+  linear-gradient(rgba(3, 15, 28, 0.30), rgba(3, 15, 28, 0.30)),
+  url("https://upload.wikimedia.org/wikipedia/commons/5/5b/Kaaba_daylight.png")
+  center center / cover fixed;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
@@ -21,17 +24,24 @@
       margin-bottom: 30px;
     }
 
-    .program-image {
-      max-width: 850px;
-      margin: auto;
-    }
+.program-image {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
 
-    .program-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      display: block;
-    }
+.program-image > a:first-child {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+.program-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
 
     .back-btn {
       display: inline-block;
@@ -42,6 +52,21 @@
       text-decoration: none;
       border-radius: 8px;
     }
+    .program-image img {
+  transition: transform 0.4s ease;
+}
+
+.program-image img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.back-btn {
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.08);
+}
   </style>
 </head>
 
@@ -49,9 +74,13 @@
 
   <h1>برامج عمرة العطلة المدرسية </h1>
 
-  <div class="program-image">
-<img src="programmes/janvier/OMRA 7JRS DONE.jpg" alt="برنامج يناير">
-  <a href="umrah.html" class="back-btn">العودة إلى برامج العمرة</a>
+<div class="program-image">
+  <a href="https://wa.me/212659191714?text=السلام%20عليكم،%20بغيت%20نحجز%20برنامج%20العمرة%20ديال%20يناير"
+     target="_blank" rel="noopener noreferrer">
+    <img src="programmes/janvier/OMRA 7JRS DONE.jpg" alt="برنامج يناير">
+  </a>
 
+  <a href="umrah.html" class="back-btn">العودة إلى برامج العمرة</a>
+</div>
 </body>
 </html>

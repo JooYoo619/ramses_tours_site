@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تذاكر الطيران | RAMSES TOURS</title>
+
+<style>
+@font-face {
+  font-family: 'XBYas';
+  src: url('fonts/xb-yas-bold.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'XBYas', sans-serif;
+  background: #071b2b;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+header h1 {
+  color: #d6ae68;
+  font-size: 32px;
+}
+
+header p {
+  color: #ddd;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  color: #d6ae68;
+  border: 1px solid #d6ae68;
+  border-radius: 30px;
+  text-decoration: none;
+  background: rgba(214,174,104,0.08);
+  transition: 0.3s;
+}
+
+.back:hover {
+  background: #d6ae68;
+  color: #071b2b;
+  transform: translateY(-3px);
+}
+
+.booking {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #102b40;
+  border: 1px solid #d6ae68;
+  border-radius: 18px;
+}
+
+.booking h2 {
+  color: #d6ae68;
+  text-align: center;
+}
+
+.booking p {
+  text-align: center;
+  color: #ddd;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  color: #d6ae68;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #526779;
+  border-radius: 9px;
+  background: #071b2b;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: #d6ae68;
+  color: #071b2b;
+  font-family: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #efca88;
+}
+
+footer {
+  text-align: center;
+  color: #aaa;
+  margin-top: 35px;
+}
+
+@media(max-width:600px) {
+  .booking {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="back">
+    ← العودة إلى الصفحة الرئيسية
+  </a>
+
+  <h1>تذاكر الطيران ✈</h1>
+  <p>احجز تذكرتك بكل سهولة مع RAMSES TOURS</p>
+</header>
+
+<section class="booking">
+  <h2>استمارة طلب تذكرة الطيران</h2>
+  <p>عمر المعلومات التالية وسنتواصل معك</p>
+
+  <form onsubmit="sendFlightWhatsApp(event)">
+
+    <label>الاسم الكامل</label>
+    <input type="text" id="flightName" placeholder="الاسم الكامل" required>
+
+    <label>رقم الهاتف</label>
+    <input type="tel" id="flightPhone" placeholder="رقم الهاتف" required>
+
+    <label>مدينة الانطلاق</label>
+    <input type="text" id="departure" placeholder="مثال: الدار البيضاء" required>
+
+    <label>الوجهة</label>
+    <input type="text" id="destination" placeholder="مثال: باريس" required>
+
+    <label>تاريخ الذهاب</label>
+    <input type="date" id="flightDate" required>
+
+    <label>تاريخ الرجوع</label>
+    <input type="date" id="returnDate" required>
+
+    <label>نوع الرحلة</label>
+    <select id="tripType" required>
+      <option value="">اختار نوع الرحلة</option>
+      <option value="ذهاب وإياب">ذهاب وإياب</option>
+      <option value="ذهاب فقط">ذهاب فقط</option>
+    </select>
+
+    <label>عدد المسافرين</label>
+    <input type="number" id="passengers" min="1" value="1" required>
+
+    <label>الأمتعة</label>
+    <select id="baggage" required>
+      <option value="">اختار الأمتعة</option>
+      <option value="حقيبة يدوية فقط">حقيبة يدوية فقط</option>
+      <option value="حقيبة في الشحن">حقيبة في الشحن</option>
+      <option value="الاثنتان">الاثنتان</option>
+    </select>
+
+    <label>ملاحظات إضافية</label>
+    <textarea id="flightNotes" rows="4" placeholder="معلومات إضافية (اختياري)"></textarea>
+
+    <button type="submit">إرسال الطلب عبر واتساب</button>
+
+  </form>
+</section>
+
+<footer>
+  RAMSES TOURS © جميع الحقوق محفوظة
+</footer>
+
+<script>
+function sendFlightWhatsApp(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("flightName").value;
+  const phone = document.getElementById("flightPhone").value;
+  const departure = document.getElementById("departure").value;
+  const destination = document.getElementById("destination").value;
+  const date = document.getElementById("flightDate").value;
+  const returnDate = document.getElementById("returnDate").value;
+  const tripType = document.getElementById("tripType").value;
+  const passengers = document.getElementById("passengers").value;
+  const baggage = document.getElementById("baggage").value;
+  const notes = document.getElementById("flightNotes").value;
+
+  const message =
+    "طلب تذكرة طيران جديد - RAMSES TOURS\n\n" +
+    "الاسم: " + name + "\n" +
+    "الهاتف: " + phone + "\n" +
+    "مدينة الانطلاق: " + departure + "\n" +
+    "الوجهة: " + destination + "\n" +
+    "تاريخ الذهاب: " + date + "\n" +
+    "تاريخ الرجوع: " + (tripType === "ذهاب فقط" ? "غير محدد" : returnDate) + "\n" +
+    "نوع الرحلة: " + tripType + "\n" +
+    "عدد المسافرين: " + passengers + "\n" +
+    "الأمتعة: " + baggage + "\n" +
+    "ملاحظات: " + notes;
+
+  window.open(
+    "https://wa.me/212662111120?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>

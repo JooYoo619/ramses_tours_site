@@ -16,8 +16,10 @@
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-      background: #071b2b;
-    }
+background:
+  linear-gradient(rgba(3, 15, 28, 0.72), rgba(3, 15, 28, 0.82)),
+  url("https://upload.wikimedia.org/wikipedia/commons/5/55/Makkah_%28Mecca%29.jpg")
+  center center / cover fixed;    }
 
     header {
       padding: 22px;
@@ -54,7 +56,7 @@
     .program-card {
       min-height: 300px;
       padding: 18px;
-      background: #102b43;
+      background: transparent;
       border: 1px solid #d6aa51;
       border-radius: 16px;
     }
@@ -90,6 +92,14 @@
       border-radius: 25px;
       text-decoration: none;
     }
+  .program-card img {
+  transition: transform 0.4s ease;
+}
+
+.program-card img:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
   </style>
 </head>
 
@@ -106,16 +116,25 @@
     <div class="programs">
 
 <div class="program-card">
-<img src="programmes/decembre/12 ET 16 DEC DONE 2.png" alt="البرنامج الأول">  <h2>برنامج 12 و 16 دجنبر </h2>
+  <a href="https://wa.me/212662111150?text=السلام%20عليكم،%20بغيت%20نحجز%20برنامج%20العمرة%2012%20و16%20دجنبر"
+     target="_blank">
+    <img src="programmes/decembre/12 ET 16 DEC DONE 2.png" alt="البرنامج الأول">
+  </a>
+  <h2>برنامج 12 و 16 دجنبر</h2>
 </div>
-      <div class="program-card">
-<img src="programmes/decembre/19 ET 22 DEC DONE 2.png" alt="برنامج دجنبر 2">        <h2>برنامج 19 و 22 دجنبر </h2>
-      </div>
 <div class="program-card">
-  <img src="programmes/decembre/26 ET 30 DEC DONE 2.png" alt="برنامج دجنبر 3">
+  <a href="https://wa.me/212662111150?text=السلام%20عليكم،%20بغيت%20نحجز%20برنامج%20العمرة%2019%20و22%20دجنبر" target="_blank">
+    <img src="programmes/decembre/19 ET 22 DEC DONE 2.png" alt="برنامج دجنبر 2">
+  </a>
+  <h2>برنامج 19 و 22 دجنبر</h2>
+  </div>
+<div class="program-card">
+  <a href="https://wa.me/212662111150?text=السلام%20عليكم،%20بغيت%20نحجز%20برنامج%20العمرة%2026%20و30%20دجنبر" target="_blank">
+    <img src="programmes/decembre/26 ET 30 DEC DONE 2.png" alt="برنامج دجنبر 3">
+  </a>
   <h2>برنامج 26 و 30 دجنبر</h2>
-</div>
-    <a href="umrah.html" class="back-btn">العودة إلى الأشهر</a>
+  </div>
+</div>    <a href="umrah.html" class="back-btn">العودة إلى الأشهر</a>
   </main>
 
 </body>
